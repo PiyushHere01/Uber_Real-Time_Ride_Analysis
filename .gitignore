@@ -1,0 +1,13 @@
+.venv/
+
+__pycache__/
+
+*.pyc
+
+.vscode/
+
+data/bronze/*.csv
+
+data/silver/*.csv
+
+data/gold/*.csv
