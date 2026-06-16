@@ -157,7 +157,7 @@ This ensures that newly arriving ride events are reflected in the dashboard with
 
 ---
 
-## 📷 Dashboard Screenshots
+## 📷 Dashboard Screenshot
 
 ### Dashboard Overview
 
