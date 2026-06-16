@@ -157,13 +157,15 @@ This ensures that newly arriving ride events are reflected in the dashboard with
 
 ---
 
-## 📷 Dashboard Screenshot
+## 📷 Dashboard Screenshots
 
 ### Dashboard Overview
 
-![Dashboard](dashboard_Screenshot/dashboard.png)
+![Dashboard Overview](dashboard_Screenshot/Screenshot%202026-06-15%20185726.png)
 
-> Additional screenshots can be added to the `dashboard_Screenshot` folder and referenced here.
+### Dashboard Analytics
+
+![Dashboard Analytics](dashboard_Screenshot/Screenshot%202026-06-15%20185744.png)
 
 ---
 
