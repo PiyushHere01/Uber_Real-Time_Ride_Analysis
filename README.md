@@ -1,6 +1,6 @@
 # 🚖 Real-Time Uber Ride Analytics Platform
 
-An end-to-end Real-Time Data Engineering project that simulates Uber ride events using Apache Kafka and processes streaming data through a Medallion Architecture (Bronze → Silver → Gold) before visualizing business insights in an interactive Streamlit Dashboard.
+An end-to-end Real-Time Data Engineering project that simulates Uber ride events using Apache Kafka and processes streaming data through a Medallion Architecture (Bronze → Silver → Gold) before visualizing business insights through an interactive Streamlit dashboard.
 
 ---
 
@@ -31,15 +31,19 @@ Faker
    ↓
 Kafka Producer
    ↓
-Apache Kafka Topic
+Apache Kafka Topic (uber-rides)
    ↓
 Kafka Consumer
    ↓
-Bronze Layer
+Bronze Layer (bronze_rides.csv)
    ↓
-Silver Layer
+Silver Layer (silver_rides.csv)
    ↓
 Gold Layer
+   ├── daily_rides.csv
+   ├── hourly_rides.csv
+   ├── weekday_rides.csv
+   └── base_rides.csv
    ↓
 Streamlit Dashboard
 ```
@@ -50,7 +54,7 @@ Streamlit Dashboard
 
 ### bronze_rides.csv
 
-Stores raw streaming ride events received from Kafka.
+Stores raw ride events consumed from Kafka.
 
 Columns:
 
@@ -63,7 +67,7 @@ Columns:
 Purpose:
 
 - Landing zone for incoming ride events
-- Stores raw data without transformations
+- Stores raw streaming data
 - Source for Silver Layer processing
 
 ---
@@ -74,7 +78,7 @@ Purpose:
 
 Stores cleaned and transformed ride events.
 
-Additional Derived Columns:
+Additional derived columns:
 
 - pickup_date
 - pickup_hour
@@ -83,14 +87,15 @@ Additional Derived Columns:
 Purpose:
 
 - Data cleaning
+- Data standardization
 - Feature engineering
-- Standardized dataset for analytics
+- Source for Gold Layer aggregations
 
 ---
 
 ## 🥇 Gold Layer
 
-The Gold Layer contains business-ready aggregated datasets.
+Business-ready aggregated datasets used by the dashboard.
 
 ### daily_rides.csv
 
@@ -124,12 +129,12 @@ The project includes an automated ETL pipeline using:
 
 Responsibilities:
 
-- Executes Silver Layer transformations
-- Executes Gold Layer aggregations
+- Runs Silver Layer transformations
+- Runs Gold Layer aggregations
 - Refreshes datasets automatically
 - Keeps dashboard metrics updated
 
-This ensures that newly arriving ride events are automatically reflected in the dashboard.
+This ensures that newly arriving ride events are reflected in the dashboard without manual intervention.
 
 ---
 
@@ -150,6 +155,17 @@ This ensures that newly arriving ride events are automatically reflected in the 
 - Weekday Ride Distribution
 - Top Uber Bases
 
+---
+
+## 📷 Dashboard Screenshots
+
+### Dashboard Overview
+
+![Dashboard](dashboard_Screenshot/dashboard.png)
+
+> Additional screenshots can be added to the `dashboard_Screenshot` folder and referenced here.
+
+---
 
 ## 🛠️ Technology Stack
 
@@ -202,7 +218,8 @@ Uber_Realtime_Ride_Analytics
 ├── architecture.png
 ├── data_model.png
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -262,7 +279,7 @@ streamlit run dashboard/dash_app.py
 ## 🚀 Future Enhancements
 
 - Apache Spark Streaming Integration
-- Databricks Implementation
+- Databricks Integration
 - Cloud Deployment (AWS/Azure/GCP)
 - Real-Time Alerting System
 - Advanced Ride Analytics
@@ -271,7 +288,7 @@ streamlit run dashboard/dash_app.py
 
 ## 👨‍💻 Author
 
-**Piyush Srivastava**
+### Piyush Srivastava
 
 GitHub: https://github.com/PiyushHere01
 
